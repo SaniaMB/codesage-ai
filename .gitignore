@@ -1,2 +1,5 @@
 # Cloned repositories
-backend/repositories/.DS_Store
+backend/repositories/*
+!backend/repositories/.gitkeep
+
+.DS_Store

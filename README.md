@@ -33,6 +33,16 @@ Instead of manually searching through hundreds of files or deciding which code s
 
 ---
 
+## Current Support
+
+CodeSage AI currently supports **Python repositories** only.
+
+The application uses Python's **Abstract Syntax Tree (AST)** to parse source code and extract classes and functions for semantic retrieval. If a repository does not contain Python source files, the application will notify the user that the repository is not currently supported.
+
+Support for additional languages such as **Java**, **JavaScript**, and **C++** is planned for future releases.
+
+---
+
 ## Tech Stack
 
 | Layer    | Stack |

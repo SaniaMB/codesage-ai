@@ -38,6 +38,11 @@ def scan_repository(request: ScanRequest):
     # Find Python files
     python_files = analyzer.get_python_files(repository_path)
 
+    if not python_files:
+        return {
+            "error": "This repository does not contain any Python files. CodeSage AI currently supports Python repositories only."
+        }
+
     analysis = []
 
     # Analyze every Python file

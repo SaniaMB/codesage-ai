@@ -58,16 +58,28 @@ function App() {
     setIsScanning(true);
 
     try {
-      await api.post("/scan", {
+      const response = await api.post("/scan", {
         repository: repository,
       });
+
+      if (response.data.error) {
+        setMessages([
+          {
+            sender: "assistant",
+            text: response.data.error,
+          },
+        ]);
+        return;
+      }
 
       setScannedRepo(repository.trim());
 
       setMessages([
         {
           sender: "assistant",
-          text: `Repository scanned successfully. Ask me anything about **${repository.trim()}**.`,
+          text: response.data.already_scanned
+            ? `Repository already analyzed. Ask me anything about **${repository.trim()}**.`
+            : `Repository scanned successfully. Ask me anything about **${repository.trim()}**.`,
         },
       ]);
     } catch (error) {
