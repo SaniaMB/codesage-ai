@@ -110,7 +110,7 @@ codesage-ai/
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/<your-username>/codesage-ai.git
+git clone https://github.com/SaniaMB/codesage-ai.git
 cd codesage-ai
 ```
 
